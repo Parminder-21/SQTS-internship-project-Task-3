@@ -1,0 +1,326 @@
+clerae<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espresso Emporium | Premium Cafe</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-mug-hot"></i>
+                <span>Espresso<br>Emporium</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sections -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="home-section">
+            <div class="video-container">
+                <video autoplay muted loop playsinline class="hero-video">
+                    <!-- Using a high quality coffee pouring video as placeholder -->
+                    <source src="https://cdn.pixabay.com/video/2020/05/24/40061-424722513_large.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+            
+            <div class="container home-content">
+                <h1 class="animate-up">Awaken Your Senses</h1>
+                <p class="tagline animate-up delay-1">Experience the perfect blend of ethically sourced coffee and artisanal pastries in a cozy, welcoming atmosphere.</p>
+                <div class="home-buttons animate-up delay-2">
+                    <a href="#menu" class="btn btn-primary">Order Now</a>
+                    <a href="#contact" class="btn btn-outline-light">Visit Us</a>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">Our Story</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>A Passion for Perfect Brews</h3>
+                        <p>Welcome to Espresso Emporium, where every cup tells a story. Founded in 2010 by a group of passionate coffee enthusiasts, our mission has always been to bring the world's finest, ethically sourced beans directly to your cup.</p>
+                        
+                        <div class="vision-box">
+                            <i class="fa-solid fa-eye text-primary"></i>
+                            <div>
+                                <h4>Our Vision</h4>
+                                <p>To create a community hub where people can connect, relax, and enjoy world-class artisanal beverages and food.</p>
+                            </div>
+                        </div>
+
+                        <div class="specialty-box">
+                            <i class="fa-solid fa-star text-primary"></i>
+                            <div>
+                                <h4>Our Specialty</h4>
+                                <p>We specialize in single-origin pour-overs, expertly crafted espresso beverages, and freshly baked authentic European pastries.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="Cafe Interior" class="main-img">
+                        <div class="experience-badge">
+                            <span class="years">14+</span>
+                            <span class="text">Years of<br>Excellence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Menu Section -->
+        <section id="menu" class="section" style="background-color: var(--bg-card);">
+            <div class="container">
+                <h2 class="section-title">Our Menu</h2>
+                
+                <div class="menu-categories">
+                    <button class="menu-btn active" data-filter="all">All</button>
+                    <button class="menu-btn" data-filter="coffee">Coffee</button>
+                    <button class="menu-btn" data-filter="pastry">Pastries</button>
+                </div>
+
+                <div class="menu-grid">
+                    <!-- Item 1 -->
+                    <div class="menu-item" data-category="coffee">
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=500&q=80" alt="Espresso">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h4>Classic Espresso</h4>
+                                <span class="price" data-price="250">₹250</span>
+                            </div>
+                            <p>Rich, full-bodied espresso with a thick layer of crema.</p>
+                            <div class="order-controls">
+                                <button class="qty-btn minus"><i class="fa-solid fa-minus"></i></button>
+                                <span class="qty">0</span>
+                                <button class="qty-btn plus"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="menu-item" data-category="coffee">
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80" alt="Latte">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h4>Vanilla Latte</h4>
+                                <span class="price" data-price="350">₹350</span>
+                            </div>
+                            <p>Espresso with steamed milk and Madagascar vanilla syrup.</p>
+                            <div class="order-controls">
+                                <button class="qty-btn minus"><i class="fa-solid fa-minus"></i></button>
+                                <span class="qty">0</span>
+                                <button class="qty-btn plus"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="menu-item" data-category="pastry">
+                        <img src="https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?auto=format&fit=crop&w=500&q=80" alt="Croissant">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h4>Butter Croissant</h4>
+                                <span class="price" data-price="200">₹200</span>
+                            </div>
+                            <p>Flaky, buttery, authentic French pastry baked fresh daily.</p>
+                            <div class="order-controls">
+                                <button class="qty-btn minus"><i class="fa-solid fa-minus"></i></button>
+                                <span class="qty">0</span>
+                                <button class="qty-btn plus"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="menu-item" data-category="pastry">
+                        <img src="https://images.unsplash.com/photo-1558401391-7899b4bd5bbf?auto=format&fit=crop&w=500&q=80" alt="Muffin">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h4>Blueberry Muffin</h4>
+                                <span class="price" data-price="250">₹250</span>
+                            </div>
+                            <p>Loaded with fresh blueberries and topped with a streusel crumb.</p>
+                            <div class="order-controls">
+                                <button class="qty-btn minus"><i class="fa-solid fa-minus"></i></button>
+                                <span class="qty">0</span>
+                                <button class="qty-btn plus"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Floating Order Total -->
+            <div id="floating-cart" class="floating-cart hidden">
+                <div class="cart-info">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span>Total: ₹<span id="cart-total">0.00</span></span>
+                </div>
+                <button class="btn btn-primary btn-sm">Checkout</button>
+            </div>
+        </section>
+        <!-- Gallery Section -->
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2 class="section-title">Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item main-img">
+                        <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=800&q=80" alt="Latte Art">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=500&q=80" alt="Cafe Interior"> 
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=500&q=80" alt="Coffee Beans">
+                    </div>
+                    <div class="gallery-item tall-img">
+                        <img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&w=500&q=80" alt="Ambience">
+                    </div>
+                    <div class="gallery-item wide-img">
+                        <img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=800&q=80" alt="Pastries">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" alt="Cold Brew">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="section" style="background-color: var(--bg-card);">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p>We'd love to hear from you. Drop us a line or visit us at our main cafe.</p>
+                        
+                        <div class="info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <h5>Our Location</h5>
+                                <p>Connaught Place, New Delhi, Delhi 110001</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <h5>Call Us</h5>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <h5>Email Us</h5>
+                                <p>hello@espressoemporium.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links-contact">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contact-form">
+                            <div class="input-group">
+                                <input type="text" id="name" required placeholder="Your Name">
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="email" required placeholder="Your Email">
+                            </div>
+                            <div class="input-group">
+                                <textarea id="message" rows="5" required placeholder="Your Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <!-- Google Maps Iframe Placeholder (New Delhi coordinate example) -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112064.9189675276!2d77.10007555627192!3d28.62725345711202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37e296cb31%3A0x1da55cbf9eb3543d!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1714073356000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="#" class="logo footer-logo">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <span>Espresso<br>Emporium</span>
+                </a>
+                <p>Crafting moments of joy, one cup at a time. The finest artisanal coffee experience in the city.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Opening Hours</h4>
+                <ul>
+                    <li>Mon - Fri: 7am - 8pm</li>
+                    <li>Saturday: 8am - 9pm</li>
+                    <li>Sunday: 8am - 6pm</li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Subscribe for updates and offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Espresso Emporium. All Rights Reserved. Built for Cafe Lovers.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
