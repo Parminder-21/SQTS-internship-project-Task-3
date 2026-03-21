@@ -109,6 +109,45 @@ const updateOrderToDelivered = async (req, res) => {
     }
 };
 
+// @desc    Cancel order
+// @route   PUT /api/orders/:id/cancel
+// @access  Private
+const cancelOrder = async (req, res) => {
+    const order = await Order.findById(req.params.id);
+
+    if (order) {
+        if (order.isPaid) {
+            return res.status(400).json({ message: 'Cannot cancel a paid order' });
+        }
+        if (order.isDelivered) {
+            return res.status(400).json({ message: 'Cannot cancel a delivered order' });
+        }
+        order.isCancelled = true;
+        order.cancelledAt = Date.now();
+        const updatedOrder = await order.save();
+        res.json(updatedOrder);
+    } else {
+        res.status(404).json({ message: 'Order not found' });
+    }
+};
+
+// @desc    Delete order
+// @route   DELETE /api/orders/:id
+// @access  Private
+const deleteOrder = async (req, res) => {
+    const order = await Order.findById(req.params.id);
+
+    if (order) {
+        if (!order.isCancelled) {
+             return res.status(400).json({ message: 'Only cancelled orders can be removed' });
+        }
+        await Order.deleteOne({ _id: order._id });
+        res.json({ message: 'Order removed' });
+    } else {
+        res.status(404).json({ message: 'Order not found' });
+    }
+};
+
 module.exports = {
     addOrderItems,
     getOrderById,
@@ -116,4 +155,6 @@ module.exports = {
     getMyOrders,
     getOrders,
     updateOrderToDelivered,
+    cancelOrder,
+    deleteOrder,
 };

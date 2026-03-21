@@ -4,7 +4,11 @@ const Product = require('../models/productModel.js');
 // @route   GET /api/products
 // @access  Public
 const getProducts = async (req, res) => {
-    const products = await Product.find({});
+    const keyword = req.query.keyword
+        ? { name: { $regex: req.query.keyword, $options: 'i' } }
+        : {};
+    const category = req.query.category ? { category: { $regex: req.query.category, $options: 'i' } } : {};
+    const products = await Product.find({ ...keyword, ...category });
     res.json(products);
 };
 

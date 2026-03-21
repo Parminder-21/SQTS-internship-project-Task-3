@@ -10,6 +10,8 @@ import RegisterScreen from './screens/RegisterScreen';
 import CheckoutScreen from './screens/CheckoutScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import AdminScreen from './screens/AdminScreen';
+import OrderScreen from './screens/OrderScreen';
+import MyOrdersScreen from './screens/MyOrdersScreen';
 
 const App = () => {
   return (
@@ -25,6 +27,8 @@ const App = () => {
             <Route path="/register" element={<RegisterScreen />} />
             <Route path="/checkout" element={<CheckoutScreen />} />
             <Route path="/placeorder" element={<PlaceOrderScreen />} />
+            <Route path="/order/:id" element={<OrderScreen />} />
+            <Route path="/myorders" element={<MyOrdersScreen />} />
             <Route path="/admin" element={<AdminScreen />} />
           </Routes>
         </div>
